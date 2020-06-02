@@ -1,5 +1,6 @@
 import Operation from "../operation";
 import store from "../../store";
+import { ADD_NODE } from "../../constant/index";
 
 export default class Transation {
   stack: Operation[];
@@ -23,7 +24,7 @@ export default class Transation {
       const operation = operations[i];
 
       if (operation.actionType === Operation.ActionType.add) {
-        store.commit("add_node", operation);
+        store.commit(ADD_NODE, operation);
       }
 
       i--;

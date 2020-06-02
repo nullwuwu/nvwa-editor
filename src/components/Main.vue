@@ -34,15 +34,22 @@
         </el-submenu>
       </el-menu>
     </el-aside>
-    <el-main>Main</el-main>
+    <el-main>
+      <Viewer />
+    </el-main>
   </el-container>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import formsList from "../forms/index";
+import Viewer from "./Viewer.vue";
 
-@Component
+@Component({
+  components: {
+    Viewer
+  }
+})
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
   isCollapse = false;
