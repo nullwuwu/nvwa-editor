@@ -1,4 +1,5 @@
 import Vue, { VNode } from "vue";
+import Transation from "./core/transation";
 
 declare global {
   namespace JSX {
@@ -9,5 +10,12 @@ declare global {
     interface IntrinsicElements {
       [elem: string]: any;
     }
+  }
+}
+
+declare module "vue/types/vue" {
+  interface Vue {
+    $openForm: any;
+    $transation: Transation;
   }
 }
